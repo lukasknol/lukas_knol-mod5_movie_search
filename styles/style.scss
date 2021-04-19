@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Oswald&family=Raleway&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #ececec;
+  background-image: -webkit-linear-gradient(top, #000000 0%, #1f1f1f 640px);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 5px;
+  width: 100%;
+  z-index: 1;
+  &__outline {
+    display: flex;
+    flex-direction: row;
+    background-color: #000;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+  }
+  &__title {
+    font-size: 1.4em;
+    font-weight: bolder;
+    padding: 10px;
+  }
+  &__search {
+    border-radius: 5px;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-flow: column;
+  background-color: #000;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 5px 0 5px 50px;
+  overflow: hidden;
+  min-width: 400px;
+  &__outline {
+    display: inline-block;
+    & > * {
+      display: inline-block;
+      cursor: pointer;
+      padding: 0 10px;
+    }
+  }
+}
+
+img {
+  width: 280px;
+  border-radius: 8px;
+}
+
+.allmovies {
+  width: 100%;
+  justify-content: center;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat (1, 1fr);
+    grid-gap: 10px;
+    width: fit-content;
+    margin: 400px auto;
+    &-item {
+      display: inline-block;
+      width: 280px;
+      &:hover {
+        transform: scale(1.02);
+        transition-timing-function: ease-out;
+        transition: 0.25s;
+        -webkit-box-shadow: 0px 0px 25px 0px #000000bf;
+        -moz-box-shadow: 0px 0px 25px 0px #000000bf;
+        box-shadow: 0px 0px 25px 0px #000000bf;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+// Media queries
+@media (min-width: 860px) {
+  .buttons {
+    flex-flow: row wrap;
+    align-content: space-around;
+    line-height: 30px;
+    padding: 10px 30px;
+  }
+
+  .allmovies__list {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 100px auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .allmovies__list {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 100px auto;
+  }
+}
+
+@media (min-width: 1600px) {
+  .allmovies__list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

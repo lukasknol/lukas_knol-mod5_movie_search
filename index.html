@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movie Search</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="scripts/movies.js"></script>
+    <script defer src="scripts/movie-searcher.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <ul class="header__outline">
+            <li class="header__title">Movie Search</li>
+            <li><input id="header__search" class="header__search" type="text" autocomplete="off" name="search"
+                    placeholder="Search Movies.."></li>
+        </ul>
+
+        <nav id="buttons" class="buttons">
+            <ul>
+                <li class="buttons__outline">
+                    <input name="filter" type="radio" id="all" value="all">
+                    <label for="all">All Movies</label>
+                </li>
+                <li class="buttons__outline">
+                    <input name="filter" type="radio" id="newest" value="newest">
+                    <label for="newest">Newest releases: 2014 and up</label>
+                </li>
+                <li class="buttons__outline">
+                    <input name="filter" type="radio" id="avengers" value="avengers">
+                    <label for="avengers">Avenger</label>
+                </li>
+                <li class="buttons__outline">
+                    <input name="filter" type="radio" id="x-men" value="x-men">
+                    <label for="x-men">X-Men</label>
+                </li>
+                <li class="buttons__outline">
+                    <input name="filter" type="radio" id="princess" value="princess">
+                    <label for="princess">Princess</label>
+                </li>
+                <li class="buttons__outline">
+                    <input name="filter" type="radio" id="batman" value="batman">
+                    <label for="batman">Batman</label>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="allmovies" class="allmovies">
+        <div id="allmovies__list" class="allmovies__list"></div>
+    </main>
+
+</body>
+
+</html>
