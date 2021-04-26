@@ -1,13 +1,13 @@
-const buttons = [...document.getElementsByClassName('buttons__outline')];
-const movieMenu = document.getElementById('allmovies__list')
-const input = document.getElementById('header__search');
+const buttons = document.querySelectorAll('.buttons__outline');
+const movieMenu = document.querySelector('#allmovies__list')
+const input = document.querySelector('#header__search');
 
 const addEventListeners = () => {
     const handleOnChangeEvent = (event) => {
         const filterMovies = (wordInMovieTitle) => {
             return movies.filter(movie => movie.Title.toLowerCase().includes(wordInMovieTitle));
         }
-        const filterLatestMovies = () => movies.filter(movie => movie.Year >= 2014);
+        const filterLatestMovies = movies.filter(movie => movie.Year >= 2014);
         switch (event.target.id) {
             case 'avengers':
             case 'x-men':
@@ -16,7 +16,7 @@ const addEventListeners = () => {
                 addMoviesToDom(filterMovies(event.target.id));
                 break;
             case 'newest':
-                addMoviesToDom(filterLatestMovies());
+                addMoviesToDom(filterLatestMovies);
                 break;
             case 'all':
                 addMoviesToDom(movies);
@@ -37,8 +37,8 @@ const addEventListeners = () => {
 addEventListeners()
 
 const addMoviesToDom = ((movies) => {
-    const clearDom = () => movieMenu.innerHTML = '';
-    clearDom();
+    movieMenu.innerHTML = '';
+
     const movieList = movies.map((movie) => {
         const movieLi = document.createElement('li');
         movieLi.classList.add('allmovies__list-item');
